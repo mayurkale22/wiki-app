@@ -1,0 +1,22 @@
+{
+  "name": "wiki-app",
+  "private": true,
+  "version": "0.0.1",
+  "description": "wiki app",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Google Inc.",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@opentelemetry/core": "^0.3.2",
+    "@opentelemetry/exporter-jaeger": "^0.3.2",
+    "@opentelemetry/node": "^0.3.2",
+    "@opentelemetry/plugin-http": "^0.3.2",
+    "@opentelemetry/plugin-https": "^0.3.2",
+    "@opentelemetry/tracing": "^0.3.2",
+    "ejs": "^3.0.1",
+    "express": "*",
+    "request": "^2.88.0"
+  }
+}
