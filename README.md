@@ -31,7 +31,7 @@ Deploying your containerized application to Cloud Run is done using the followin
 
 ```sh
 $ gcloud run deploy wiki-app \
-  --image gcr.io/opencenus-node/wiki-app \
+  --image gcr.io/$PROJECT_ID/wiki-app \
   --platform managed \
   --region us-central1 \
   --allow-unauthenticated
