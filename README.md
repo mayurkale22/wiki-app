@@ -2,7 +2,7 @@
 
 The goal of this example is to show debugging (tracing and metrics) on Cloud Run application (Node.js) with Stackdriver using OpenTelemetry (formally known as "OpenCensus").
 
-Google Cloud Run is a fully managed platform that takes a Docker container image and runs it as a stateless, autoscaling HTTP service.
+[Google Cloud Run](https://cloud.google.com/run/) is a fully managed platform that takes a Docker container image and runs it as a stateless, autoscaling HTTP service.
 
 ## Install dependencies and run the app
 ```sh
