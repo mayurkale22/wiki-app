@@ -1,7 +1,6 @@
 # Overview
 
 ![Overview](images/overview.png)
-![Overview](images/overview1.png)
 
 The goal of this example is to show debugging (tracing and metrics) on Cloud Run application (Node.js) with Stackdriver using OpenTelemetry ([formally known as "OpenCensus"](https://medium.com/opentracing/a-roadmap-to-convergence-b074e5815289)).
 
