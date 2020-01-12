@@ -33,7 +33,7 @@ $ gcloud builds submit --tag gcr.io/$PROJECT_ID/wiki-app
 If you would like to run and test the application locally from Cloud Shell, you can start it using this standard docker command :
 
 ```sh
-$ docker run -d -p 3000:3000 gcr.io/$PROJECT_ID/wiki-app
+$ docker run -d -p 8080:8080 gcr.io/$PROJECT_ID/wiki-app
 ```
 
 ## Deploy to Cloud Run
