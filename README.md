@@ -51,6 +51,7 @@ The `--allow-unauthenticated` deploy option enables you to reach the application
 The `--platform managed` deploy option means that we're requesting the fully-managed environment.
 
 Then wait a few moments until the deployment is complete.
+![Cloud Run UI](images/cloud-run.png)
 
 ## Time to clean up
 While Cloud Run does not charge when the service is not in use, you might still be charged for storing the built container image.
