@@ -43,6 +43,7 @@ app.post('/wiki', function (req, res) {
   });
 })
 
-app.listen(3000, function () {
-  console.log('App running on http://localhost:3000/wiki')
+const port = process.env.PORT || 8080;
+app.listen(port, function () {
+  console.log(`App running on http://localhost:${port}/wiki`)
 })
