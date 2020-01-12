@@ -2,6 +2,8 @@
 
 The goal of this example is to show debugging (tracing and metrics) on Cloud Run application (Node.js) with Stackdriver using OpenTelemetry (formally known as "OpenCensus").
 
+Google Cloud Run is a fully managed platform that takes a Docker container image and runs it as a stateless, autoscaling HTTP service.
+
 ## Install dependencies and run the app
 ```sh
 $ npm install
@@ -10,6 +12,13 @@ $ npm start
 
 Navigate to <http://localhost:8080/wiki>:
 ![Wiki Demo](images/demo.gif)
+
+### Stackdriver UI
+
+Please visit <https://console.cloud.google.com/traces/traces>:
+![Stackdriver UI](images/stackdriver.png)
+
+> Stackdriver Trace is a distributed tracing system that collects latency data from your applications and displays it in the Google Cloud Platform Console.
 
 ## Build the image
 Now, build your container image using Cloud Build, by running the following command from the directory containing the `Dockerfile`:
@@ -20,6 +29,7 @@ $ gcloud builds submit --tag gcr.io/$PROJECT_ID/wiki-app
 
 > Cloud Build is a service that executes your builds on GCP. It executes a series of build steps, where each build step is run in a Docker container to produce your application container (or other artifacts) and push it to Cloud Registry, all in one command.
 
+### Running locally
 If you would like to run and test the application locally from Cloud Shell, you can start it using this standard docker command :
 
 ```sh

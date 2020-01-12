@@ -1,12 +1,19 @@
 'use strict';
 
-const { NodeTracer } = require('@opentelemetry/node');
-const { SimpleSpanProcessor } = require('@opentelemetry/tracing');
-const { JaegerExporter } = require('@opentelemetry/exporter-jaeger');
+const tracing = require('@opencensus/nodejs');
+const {StackdriverTraceExporter} = require('@opencensus/exporter-stackdriver');
 
-const tracer = new NodeTracer();
-const exporter = new JaegerExporter({serviceName: 'my-service'});
-tracer.addSpanProcessor(new SimpleSpanProcessor(exporter));
+//const project = process.env.GOOGLE_CLOUD_PROJECT;
+const project = "opencenus-node";
+const exporter = new StackdriverTraceExporter({projectId: project});
+
+// NOTE: Please ensure that you start the tracer BEFORE initializing express app
+// Starts tracing and set sampling rate, exporter and propagation
+tracing.start({
+  exporter: exporter,
+  samplingRate: 1, // For demo purposes, always sample
+  logLevel: 1 // show errors, if any
+});
 
 const express = require('express');
 const bodyParser = require('body-parser');
