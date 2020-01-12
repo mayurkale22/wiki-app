@@ -2,7 +2,7 @@
 
 ![Overview](images/overview.png)
 
-The goal of this example is to show debugging (tracing and metrics) on Cloud Run application (Node.js) with Stackdriver using OpenTelemetry ([formally known as "OpenCensus"](https://medium.com/opentracing/a-roadmap-to-convergence-b074e5815289)).
+The goal of this example is to show debugging (tracing and metrics) on Cloud Run application (Node.js) with Stackdriver using OpenCensus.
 
 [Google Cloud Run](https://cloud.google.com/run/) is a fully managed platform that takes a Docker container image and runs it as a stateless, autoscaling HTTP service.
 
@@ -55,6 +55,9 @@ The `--platform managed` deploy option means that we're requesting the fully-man
 Then wait a few moments until the deployment is complete.
 ![Cloud Run UI](images/cloud-run.png)
 
+Alright, so now our app is up and running on Cloud Run! Next up is to enable OpenCensus to export application telemetry (metrics, traces etc.).
+
+
 ## Time to clean up
 While Cloud Run does not charge when the service is not in use, you might still be charged for storing the built container image.
 
@@ -71,3 +74,7 @@ $ gcloud run services delete wiki-app \
   --platform managed \
   --region us-central1
 ```
+
+## Important Note:
+
+OpenCensus is being replaced by ***OpenTelemetry***, but the migration should not require much change to use of the API. Read more [here](https://medium.com/opentracing/a-roadmap-to-convergence-b074e5815289).
