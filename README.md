@@ -6,6 +6,24 @@ The goal of this example is to show debugging (tracing and metrics) on Cloud Run
 
 [Google Cloud Run](https://cloud.google.com/run/) is a fully managed platform that takes a Docker container image and runs it as a stateless, autoscaling HTTP service.
 
+## Prerequisites
+Install [Node.js](https://nodejs.org) in your local development environment.
+Create a Google Cloud Platform (GCP) project and set it as your default project
+with the command
+```sh
+$ export GOOGLE_CLOUD_PROJECT=[your project id]
+$ gcloud config set project $GOOGLE_CLOUD_PROJECT
+```
+
+You will need the environment variable GOOGLE_CLOUD_PROJECT exported to the Node.js runtime for it to send the data to Stackdriver when running in a local development environment.
+
+Enable the [Stackdriver API](https://cloud.google.com/monitoring/api/v3/) with the command
+```sh
+$ gcloud services enable monitoring
+```
+
+You can run the example with another monitoring backend if you modify the code in `server.js` to use a different exporter.
+
 ## Install dependencies and run the app
 ```sh
 $ npm install
@@ -53,10 +71,8 @@ The `--allow-unauthenticated` deploy option enables you to reach the application
 The `--platform managed` deploy option means that we're requesting the fully-managed environment.
 
 Then wait a few moments until the deployment is complete.
+
 ![Cloud Run UI](images/cloud-run.png)
-
-Alright, so now our app is up and running on Cloud Run! Next up is to enable OpenCensus to export application telemetry (metrics, traces etc.).
-
 
 ## Time to clean up
 While Cloud Run does not charge when the service is not in use, you might still be charged for storing the built container image.
