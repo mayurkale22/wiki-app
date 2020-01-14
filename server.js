@@ -1,19 +1,20 @@
 'use strict';
 
+const project = process.env.GOOGLE_CLOUD_PROJECT;
 const tracing = require('@opencensus/nodejs');
 const {StackdriverTraceExporter} = require('@opencensus/exporter-stackdriver');
-
-//const project = process.env.GOOGLE_CLOUD_PROJECT;
-const project = "opencenus-node";
 const exporter = new StackdriverTraceExporter({projectId: project});
 
-// NOTE: Please ensure that you start the tracer BEFORE initializing express app
-// Starts tracing and set sampling rate, exporter and propagation
+// [Enable next 2 lines to use OpenCensus Agent Exporter]
+// const {OCAgentExporter} = require('@opencensus/exporter-ocagent');
+// const exporter = new OCAgentExporter({serviceName: 'my-service'});
+
 tracing.start({
   exporter: exporter,
   samplingRate: 1, // For demo purposes, always sample
   logLevel: 1 // show errors, if any
 });
+
 
 const express = require('express');
 const bodyParser = require('body-parser');

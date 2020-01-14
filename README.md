@@ -33,7 +33,7 @@ $ npm start
 Navigate to <http://localhost:8080/wiki>:
 ![Wiki Demo](images/demo.gif)
 
-### Stackdriver UI
+### Generated Traces
 
 Please visit <https://console.cloud.google.com/traces/traces>:
 ![Stackdriver UI](images/stackdriver.png)

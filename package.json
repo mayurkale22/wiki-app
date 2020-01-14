@@ -1,15 +1,12 @@
 {
-  "name": "wiki-app",
-  "private": true,
+  "name": "instrumentation-tutorial-serverless",
   "version": "0.0.1",
-  "description": "wiki app",
   "scripts": {
     "start": "node server.js"
   },
-  "author": "Google Inc.",
-  "license": "Apache-2.0",
   "dependencies": {
     "@opencensus/exporter-stackdriver": "^0.0.19",
+    "@opencensus/exporter-ocagent": "^0.0.19",
     "@opencensus/nodejs": "^0.0.19",
     "ejs": "^3.0.1",
     "express": "*",
