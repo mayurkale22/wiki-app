@@ -10,10 +10,10 @@ data:
   oc-agent-config: |
     receivers:
       opencensus: 
-	address: "localhost:55678"
+        address: "localhost:55678"
     exporters:
       stackdriver:
-    	project: "{{PROJECT-ID}}"
+        project: "{{PROJECT-ID}}"
 ---
 apiVersion: extensions/v1beta1
 kind: DaemonSet
